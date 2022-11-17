@@ -25,4 +25,12 @@ public class UserRegistration {
         boolean check=pattern.matcher(email).matches();
         return check;
     }
+
+    public boolean validatePhone(String phone) {
+        String regex = "(0|91)?[-\\s]?[6-9][0-9]{9}";
+        Pattern pattern=Pattern.compile(regex);
+        Matcher matcher=pattern.matcher(phone);
+        boolean check=pattern.matcher(phone).matches();
+        return check;
+    }
 }
