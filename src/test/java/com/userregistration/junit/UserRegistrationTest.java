@@ -1,6 +1,9 @@
 package com.userregistration.junit;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 public class UserRegistrationTest {
     @Test
     public void FirstNameCorrectTest() {
@@ -65,6 +68,20 @@ public class UserRegistrationTest {
         UserRegistration user=new UserRegistration();
         boolean result=user.validatePassword("Kruti12");
         Assert.assertFalse(result);
+    }
+
+    @Test
+    public void AllEmailSamplesCorrectTest() {
+        UserRegistration user=new UserRegistration();
+        Assert.assertTrue(user.validateAllEmailSamples("abc@yahoo.com"));
+        Assert.assertTrue(user.validateAllEmailSamples("abc-100@yahoo.com"));
+        Assert.assertTrue(user.validateAllEmailSamples("abc.100@yahoo.com"));
+        Assert.assertTrue(user.validateAllEmailSamples("abc111@abc.com"));
+        Assert.assertTrue(user.validateAllEmailSamples("abc-100@abc.net"));
+        Assert.assertTrue(user.validateAllEmailSamples("abc.100@abc.com.au"));
+        Assert.assertTrue(user.validateAllEmailSamples("abc@1.com"));
+        Assert.assertTrue(user.validateAllEmailSamples("abc@gmail.com.com"));
+        Assert.assertTrue(user.validateAllEmailSamples("abc+100@gmail.com.com"));
     }
 
 }
