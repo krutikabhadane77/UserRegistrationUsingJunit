@@ -27,4 +27,17 @@ public class UserRegistrationTest {
         boolean result=user.validateLastName("patil");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void EmailCorrectTest() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.validateEmail("kpatil18@gmail.com");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void EmailIncorrectTest() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.validateEmail("abc.com");
+        Assert.assertFalse(result);
+    }
 }
