@@ -8,8 +8,13 @@ public class UserRegistration {
         Matcher matcher=pattern.matcher(fname);
         boolean check=pattern.matcher(fname).matches();
         return check;
-        try(validateFirstName(fname)) {
+    }
 
-        }
+    public boolean validateLastName(String lname) {
+        String regex = "[A-Z][a-z]{3,}";
+        Pattern pattern=Pattern.compile(regex);
+        Matcher matcher=pattern.matcher(lname);
+        boolean check=pattern.matcher(lname).matches();
+        return check;
     }
 }
