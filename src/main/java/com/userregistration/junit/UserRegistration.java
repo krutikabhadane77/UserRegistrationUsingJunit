@@ -33,4 +33,12 @@ public class UserRegistration {
         boolean check=pattern.matcher(phone).matches();
         return check;
     }
+
+    public boolean validatePassword(String password) {
+        String regex = "((?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%]).{8,20})";
+        Pattern pattern=Pattern.compile(regex);
+        Matcher matcher=pattern.matcher(password);
+        boolean check=pattern.matcher(password).matches();
+        return check;
+    }
 }

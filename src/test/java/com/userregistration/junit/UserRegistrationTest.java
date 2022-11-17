@@ -54,4 +54,17 @@ public class UserRegistrationTest {
         Assert.assertFalse(result);
     }
 
+    @Test
+    public void PasswordCorrectTest() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.validatePassword("Kpatil#123");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void PasswordIncorrectTest() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.validatePassword("Kruti12");
+        Assert.assertFalse(result);
+    }
+
 }
