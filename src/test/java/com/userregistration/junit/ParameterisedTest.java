@@ -40,7 +40,7 @@ public class ParameterisedTest {
     }
 
     @Test
-    public void validEmailTest() {
+    public void validEmailTest() throws InvalidUserDetailsException {
         user=new UserRegistration();
         boolean result=user.validateAllEmailSamples(email);
         Assert.assertEquals(email, result);
